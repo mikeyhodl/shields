@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: core/service-test-runner/infer-pull-request</title>
+    <title>JSDoc: Source: core/base-service/resource-cache.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,446 +17,85 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: core/service-test-runner/infer-pull-request</h1>
-
-    
-
-
-
-
-<section>
-
-<header>
-    
-        
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~inferPullRequest"><span class="type-signature">(inner) </span>inferPullRequest<span class="signature">(env<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="module-core_service-test-runner_infer-pull-request.html#~PullRequest">module:core/service-test-runner/infer-pull-request~PullRequest</a>}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>When called inside a CI build, infer the details
-of a pull request from the environment variables.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>env</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    process.env
-                
-                </td>
-            
-
-            <td class="description last"><p>Environment variables</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_service-test-runner_infer-pull-request.js.html">core/service-test-runner/infer-pull-request.js</a>, <a href="core_service-test-runner_infer-pull-request.js.html#line73">line 73</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Pull Request</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="module-core_service-test-runner_infer-pull-request.html#~PullRequest">module:core/service-test-runner/infer-pull-request~PullRequest</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-    
-
-    
-        <h3 class="subsection-title">Type Definitions</h3>
-
-        
-                
-<h4 class="name" id="~PullRequest">PullRequest</h4>
-
-
-
-
-<div class="description">
-    <p>Pull Request</p>
-</div>
-
-
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>pr.baseUrl</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>(returned for travis CI only)</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>owner</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>repo</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>pullRequest</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>PR/issue number</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>slug</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>owner/repo/#pullRequest</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_service-test-runner_infer-pull-request.js.html">core/service-test-runner/infer-pull-request.js</a>, <a href="core_service-test-runner_infer-pull-request.js.html#line89">line 89</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-            
-    
-
-    
-</article>
-
-</section>
+    <h1 class="page-title">Source: core/base-service/resource-cache.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module
+ */
+
+import { InvalidResponse } from './errors.js'
+import { fetch } from './got.js'
+import checkErrorResponse from './check-error-response.js'
+
+const oneDay = 24 * 3600 * 1000 // 1 day in milliseconds
+
+// Map from URL to { timestamp: last fetch time, data: data }.
+let resourceCache = Object.create(null)
+
+/**
+ * Make a HTTP request using an in-memory cache
+ *
+ * @param {object} attrs Refer to individual attrs
+ * @param {string} attrs.url URL to request
+ * @param {number} attrs.ttl Number of milliseconds to keep cached value for
+ * @param {boolean} [attrs.json=true] True if we expect to parse the response as JSON
+ * @param {Function} [attrs.scraper=buffer => buffer] Function to extract value from the response
+ * @param {object} [attrs.options={}] Options to pass to got
+ * @param {Function} [attrs.requestFetcher=fetch] Custom fetch function
+ * @returns {*} Parsed response
+ */
+async function getCachedResource({
+  url,
+  ttl = oneDay,
+  json = true,
+  scraper = buffer => buffer,
+  options = {},
+  requestFetcher = fetch,
+}) {
+  const timestamp = Date.now()
+  const cached = resourceCache[url]
+  if (cached != null &amp;&amp; timestamp - cached.timestamp &lt; ttl) {
+    return cached.data
+  }
+
+  const { buffer } = await checkErrorResponse({})(
+    await requestFetcher(url, options)
+  )
+
+  let reqData
+  if (json) {
+    try {
+      reqData = JSON.parse(buffer)
+    } catch (e) {
+      throw new InvalidResponse({
+        prettyMessage: 'unparseable intermediate json response',
+        underlyingError: e,
+      })
+    }
+  } else {
+    reqData = buffer
+  }
+
+  const data = scraper(reqData)
+  resourceCache[url] = { timestamp, data }
+  return data
+}
+
+function clearResourceCache() {
+  resourceCache = Object.create(null)
+}
+
+export { getCachedResource, clearResourceCache }
+</code></pre>
+        </article>
+    </section>
 
 
 
