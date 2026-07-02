@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: services/text-formatters</title>
+    <title>JSDoc: Module: services/test-results</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: services/text-formatters</h1>
+    <h1 class="page-title">Module: services/test-results</h1>
 
     
 
@@ -34,8 +34,7 @@
     <div class="container-overview">
     
         
-            <div class="description"><p>Commonly-used functions for formatting text in badge labels. Includes
-ordinal numbers, currency codes, star ratings, versions, etc.</p></div>
+            <div class="description"><p>Helpers for formatting test-result badge messages and colors.</p></div>
         
 
         
@@ -70,7 +69,7 @@ ordinal numbers, currency codes, star ratings, versions, etc.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="services_text-formatters.js.html">services/text-formatters.js</a>, <a href="services_text-formatters.js.html#line1">line 1</a>
+        <a href="services_test-results.js.html">services/test-results.js</a>, <a href="services_test-results.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -109,7 +108,7 @@ ordinal numbers, currency codes, star ratings, versions, etc.</p></div>
     
 
     
-    <h4 class="name" id="~addv"><span class="type-signature">(inner) </span>addv<span class="signature">(version)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="~renderTestResultBadge"><span class="type-signature">(inner) </span>renderTestResultBadge<span class="signature">(attrs)</span><span class="type-signature"> &rarr; {Object}</span></h4>
     
 
     
@@ -117,8 +116,9 @@ ordinal numbers, currency codes, star ratings, versions, etc.</p></div>
 
 
 <div class="description">
-    <p>Add a starting v to the version unless it doesn't starts with a digit, is a date (yyyy-mm-dd), or is a commit hash.
-For example, addv(&quot;1.2.3&quot;) returns &quot;v1.2.3&quot;, but addv(&quot;hello&quot;), addv(&quot;2021-10-31&quot;), addv(&quot;abcdef1&quot;), returns &quot;hello&quot;, &quot;2021-10-31&quot;, and &quot;abcdef1&quot; respectively.</p>
+    <p>Render badge data for a test result summary.</p>
+<p>Chooses badge color from pass/fail/skip counts and delegates message formatting
+to renderTestResultMessage.</p>
 </div>
 
 
@@ -154,13 +154,13 @@ For example, addv(&quot;1.2.3&quot;) returns &quot;v1.2.3&quot;, but addv(&quot;
 
         <tr>
             
-                <td class="name"><code>version</code></td>
+                <td class="name"><code>attrs</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">object</span>
 
 
             
@@ -170,976 +170,9 @@ For example, addv(&quot;1.2.3&quot;) returns &quot;v1.2.3&quot;, but addv(&quot;
 
             
 
-            <td class="description last"><p>Version string</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="services_text-formatters.js.html">services/text-formatters.js</a>, <a href="services_text-formatters.js.html#line134">line 134</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Version string with the starting v</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~currencyFromCode"><span class="type-signature">(inner) </span>currencyFromCode<span class="signature">(code)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Converts the ISO 4217 code to the corresponding currency symbol.
-If the the symbol for the code is not found, then the code itself is returned.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>code</code></td>
-            
-
-            <td class="type">
-            
+            <td class="description last"><p>Refer to individual attrs</p>
+                <h6>Properties</h6>
                 
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>ISO 4217 code</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="services_text-formatters.js.html">services/text-formatters.js</a>, <a href="services_text-formatters.js.html#line48">line 48</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Currency symbol for the code</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~maybePluralize"><span class="type-signature">(inner) </span>maybePluralize<span class="signature">(singular, countable, plural)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Returns a string that is either the singular or the plural form of a word,
-depending on the length of the countable parameter.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>singular</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Singular form of the word</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>countable</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;string></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Array of values you want to count</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>plural</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Plural form of the word</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="services_text-formatters.js.html">services/text-formatters.js</a>, <a href="services_text-formatters.js.html#line152">line 152</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Singular or plural form of the word</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~metric"><span class="type-signature">(inner) </span>metric<span class="signature">(n)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Given a number (positive or negative), returns a string with appropriate unit in the metric system, SI.
-Note: numbers beyond the peta- cannot be represented as integers in JS.
-For example, if you call metric(1000), it will return &quot;1k&quot;, which means one kilo or one thousand.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>n</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Input number</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="services_text-formatters.js.html">services/text-formatters.js</a>, <a href="services_text-formatters.js.html#line83">line 83</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>String with appropriate unit in the metric system, SI</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~omitv"><span class="type-signature">(inner) </span>omitv<span class="signature">(version)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Remove the starting v in a string if it exists.
-For example, omitv(&quot;v1.2.3&quot;) returns &quot;1.2.3&quot;, but omitv(&quot;hello&quot;) returns &quot;hello&quot;.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>version</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Version string</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="services_text-formatters.js.html">services/text-formatters.js</a>, <a href="services_text-formatters.js.html#line117">line 117</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Version string without the starting v</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~ordinalNumber"><span class="type-signature">(inner) </span>ordinalNumber<span class="signature">(n)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Calculates the ordinal number of the given number.
-For example, if the input is 1, the output is “1ˢᵗ”.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>n</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Input number</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="services_text-formatters.js.html">services/text-formatters.js</a>, <a href="services_text-formatters.js.html#line66">line 66</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Ordinal number of the input number</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~starRating"><span class="type-signature">(inner) </span>starRating<span class="signature">(rating, max<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Creates a string of stars and empty stars based on the rating.
-The number of stars is determined by the integer part of the rating.
-An additional star or a three-quarter star or a half star or a quarter star is added based on the decimal part of the rating.
-The remaining stars are empty stars until the maximum number of stars is reached.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
 
 <table class="params">
     <thead>
@@ -1155,8 +188,6 @@ The remaining stars are empty stars until the maximum number of stars is reached
         
 
         
-        <th>Default</th>
-        
 
         <th class="last">Description</th>
     </tr>
@@ -1167,7 +198,7 @@ The remaining stars are empty stars until the maximum number of stars is reached
 
         <tr>
             
-                <td class="name"><code>rating</code></td>
+                <td class="name"><code>passed</code></td>
             
 
             <td class="type">
@@ -1190,25 +221,114 @@ The remaining stars are empty stars until the maximum number of stars is reached
             
 
             
-                <td class="default">
-                
-                </td>
-            
 
-            <td class="description last"><p>Current rating</p></td>
+            <td class="description last"><p>Number of passing tests.</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>max</code></td>
+                <td class="name"><code>failed</code></td>
             
 
             <td class="type">
             
                 
 <span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Number of failing tests.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>skipped</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Number of skipped tests.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>total</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Total number of tests.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>passedLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
 
 
             
@@ -1227,14 +347,114 @@ The remaining stars are empty stars until the maximum number of stars is reached
             
 
             
-                <td class="default">
+
+            <td class="description last"><p>Label for passing tests in verbose mode.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>failedLabel</code></td>
+            
+
+            <td class="type">
+            
                 
-                    5
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
                 
                 </td>
             
 
-            <td class="description last"><p>Maximum rating</p></td>
+            
+
+            <td class="description last"><p>Label for failing tests in verbose mode.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>skippedLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Label for skipped tests in verbose mode.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>isCompact</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>When true, use compact symbols in the message.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -1275,7 +495,7 @@ The remaining stars are empty stars until the maximum number of stars is reached
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="services_text-formatters.js.html">services/text-formatters.js</a>, <a href="services_text-formatters.js.html#line18">line 18</a>
+        <a href="services_test-results.js.html">services/test-results.js</a>, <a href="services_test-results.js.html#line97">line 97</a>
     </li></ul></dd>
     
 
@@ -1304,7 +524,450 @@ The remaining stars are empty stars until the maximum number of stars is reached
 
         
 <div class="param-desc">
-    <p>A string of stars and empty stars</p>
+    <p>Badge message and shields color name.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~renderTestResultMessage"><span class="type-signature">(inner) </span>renderTestResultMessage<span class="signature">(attrs)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Format test counts into a badge message string.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>attrs</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Refer to individual attrs</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>passed</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Number of passing tests.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>failed</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Number of failing tests.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>skipped</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Number of skipped tests.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>total</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Total number of tests.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>passedLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Label for passing tests in verbose mode.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>failedLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Label for failing tests in verbose mode.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>skippedLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Label for skipped tests in verbose mode.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>isCompact</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>When true, use compact symbols separated by <code>|</code>.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="services_test-results.js.html">services/test-results.js</a>, <a href="services_test-results.js.html#line42">line 42</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Formatted message, or <code>no tests</code> when total is zero.</p>
 </div>
 
 
